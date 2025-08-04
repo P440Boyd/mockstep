@@ -64,3 +64,41 @@ The simulation is based on generating a sine wave to represent the vertical acce
 *   `AMPLITUDE`: Controls the force or "firmness" of the step. A higher value creates a stronger, more easily detectable signal.
 *   `FREQUENCY` & `time.sleep`: These values are tuned together to control the pace of the walk. The current settings produce a signal that completes exactly two full cycles (steps) every second.
 *   **Impact Detection:** The script tracks the `y-value` of the sine wave. When it detects that the value has just peaked (i.e., it was rising and has now started to fall), it prints the boot logo to mark the "impact" of the foot hitting the ground.
+
+
+```
+~/mockstep main* ❯ python3 mockstep.py                                   17:44:36
+Read auth token from /Users/boydp/.emulator_console_auth_token
+Connected and authenticated with emulator on port 5554.
+
+Simulating walking steps and displaying live graph...
+----------------------------------------------------------
+ 9.80 | #########################
+11.70 | ################################################
+11.00 | #######################################
+-------------------- STEP IMPACT --------------------
+ 8.66 | ##########
+ 7.88 | #
+ 9.73 | ########################
+11.68 | ################################################
+11.05 | ########################################
+-------------------- STEP IMPACT --------------------
+ 8.71 | ###########
+ 7.86 |
+ 9.67 | #######################
+11.65 | ################################################
+11.10 | #########################################
+-------------------- STEP IMPACT --------------------
+ 8.77 | ############
+ 7.85 |
+ 9.60 | ######################
+11.63 | ###############################################
+11.15 | #########################################
+-------------------- STEP IMPACT --------------------
+ 8.83 | ############
+ 7.84 |
+ 9.54 | #####################
+11.60 | ###############################################
+11.20 | ##########################################
+-------------------- STEP IMPACT --------------------
+```
