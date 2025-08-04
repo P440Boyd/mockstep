@@ -1,4 +1,4 @@
-# Emulator Step Simulator (`fakesteps.py`)
+# Emulator Step Simulator (`mockstep.py`)
 
 ## Overview
 
