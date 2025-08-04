@@ -10,7 +10,6 @@ It is designed to help test and debug applications that rely on Android's step c
 
 *   **Realistic Simulation:** Generates a sine wave of accelerometer data corresponding to a firm walk at **120 steps per minute (2 steps/second)**.
 *   **Live Data Graph:** Displays a real-time, text-based graph of the vertical acceleration (`y-axis`) being sent to the emulator.
-*   **Visual Step Impact:** Prints a 5-line ASCII art boot at the peak of each simulated step, making it easy to visually confirm the 2 step-per-second pace.
 *   **Emulator Integration:** Connects directly to the Android emulator's Telnet port for sensor manipulation.
 *   **Authentication:** Automatically handles authentication by reading the token from the default location (`~/.emulator_console_auth_token`).
 
@@ -30,27 +29,27 @@ The script is run from your command line.
 
 ### 2. Run the Script
 
-Open a terminal or command prompt, navigate to the directory containing `fakesteps.py`, and run the following command.
+Open a terminal or command prompt, navigate to the directory containing `mockstep.py`, and run the following command.
 
 **Basic Usage (most common):**
 This command connects to the default port (`5554`) and uses the automatically found auth token.
 
 ```bash
-python fakesteps.py
+python mockstep.py
 ```
 
 **Connecting to a Different Port:**
 If your emulator is running on a different port (e.g., `5556`), use the `--port` argument.
 
 ```bash
-python fakesteps.py --port 5556
+python mockstep.py --port 5556
 ```
 
 **Providing the Token Manually:**
 If the script cannot find your auth token file, you can provide it directly with the `--token` argument.
 
 ```bash
-python fakesteps.py --token <your_auth_token>
+python mockstep.py --token <your_auth_token>
 ```
 
 ### 3. Stop the Simulation
@@ -63,7 +62,7 @@ The simulation is based on generating a sine wave to represent the vertical acce
 
 *   `AMPLITUDE`: Controls the force or "firmness" of the step. A higher value creates a stronger, more easily detectable signal.
 *   `FREQUENCY` & `time.sleep`: These values are tuned together to control the pace of the walk. The current settings produce a signal that completes exactly two full cycles (steps) every second.
-*   **Impact Detection:** The script tracks the `y-value` of the sine wave. When it detects that the value has just peaked (i.e., it was rising and has now started to fall), it prints the boot logo to mark the "impact" of the foot hitting the ground.
+*   **Impact Detection:** The script tracks the `y-value` of the sine wave. When it detects that the value has just peaked (i.e., it was rising and has now started to fall), it prints the "impact" of the foot hitting the ground.
 
 
 ```
